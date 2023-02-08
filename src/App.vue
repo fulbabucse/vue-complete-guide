@@ -1,22 +1,18 @@
 <template>
   <div class="mt-10 max-w-screen-xl mx-auto">
     <friend-contact
-      name="Fahim Islam"
-      phone="45545878"
-      email="fahim@islam.com"
-      isFavorite="0"
-    ></friend-contact>
-    <friend-contact
-      name="Fulbabu"
-      phone="454571121"
-      email="ful@babu.com"
-      isFavorite="1"
+      v-for="friend in friends"
+      :key="friend.id"
+      :name="friend.name"
+      :phone="friend.phone"
+      :email="friend.email"
+      :isFavorite="true"
     ></friend-contact>
   </div>
 </template>
 
 <script>
-const app = {
+export default {
   data() {
     return {
       friends: [
