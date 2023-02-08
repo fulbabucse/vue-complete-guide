@@ -4,11 +4,13 @@
       name="Fahim Islam"
       phone="45545878"
       email="fahim@islam.com"
+      isFavorite="0"
     ></friend-contact>
     <friend-contact
       name="Fulbabu"
       phone="454571121"
       email="ful@babu.com"
+      isFavorite="1"
     ></friend-contact>
   </div>
 </template>
