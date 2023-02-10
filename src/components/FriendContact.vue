@@ -1,8 +1,6 @@
 <template>
   <li class="list-none mt-4">
-    <h2 class="text-xl">
-      {{ name }} {{ friendIsFavorite ? "(Favorite)" : "" }}
-    </h2>
+    <h2 class="text-xl">{{ name }} {{ isFavorite ? "(Favorite)" : "" }}</h2>
     <button
       @click="toggleDetails"
       class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-3 py-1 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
@@ -25,6 +23,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -46,7 +48,6 @@ export default {
   data() {
     return {
       detailsAreVisible: false,
-      friendIsFavorite: this.isFavorite,
     };
   },
   methods: {
@@ -54,7 +55,7 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible;
     },
     toggleFavorite() {
-      this.friendIsFavorite = !this.friendIsFavorite;
+      this.$emit("toggle-favorite", this.id);
     },
   },
 };
