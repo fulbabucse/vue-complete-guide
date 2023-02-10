@@ -13,6 +13,12 @@
     >
       Toggle Favorite
     </button>
+    <button
+      @click="$emit('delete', id)"
+      class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-3 py-1 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
+    >
+      Delete
+    </button>
     <ul v-if="detailsAreVisible">
       <li><strong>Phone: </strong>{{ phone }}</li>
       <li><strong>Email: </strong>{{ email }}</li>
